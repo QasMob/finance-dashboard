@@ -1,44 +1,28 @@
-
 :root {
   /* fonts */
   --font-primary: "Inter", sans-serif;
   --font-secondary: "Source Code Pro", monospace;
 
-  /* colors */
-  --clr-dark: oklch(13% 0.028 261.692);
-  --clr-light: oklch(92.9% 0.013 255.508);
-  --clr-text: oklch(70.4% 0.04 256.788);
-  --clr-muted: #6b7c94;
-  --clr-slate50: oklch(98.4% 0.003 247.858);
-  --clr-slate100: oklch(96.8% 0.007 247.896);
-  --clr-slate800: #1e293b;
-  --clr-slate300: #cbd5e1;
-  --clr-bg: #0a101f;
-  
-  /* shadow */
-  --shadow-xl: 0 19px 38px rgba(15, 23, 42, 0.3),
-               0 15px 12px rgba(15, 23, 42, 0.22);
+  /* base colors */
+  --clr-bg: #F9FAFB;           /* main background */
+  --clr-text: #111827;          /* primary text / paragraphs */
+  --clr-muted: #6B7280;         /* secondary/muted text */
 
-  
-  /* sizes */
-  --size-xxs: 0.5rem;
-  --size-xs: 0.75rem;
-  --size-sm: 0.875rem;
-  --size-base: 1rem;
-  --size-lg: 1.125rem;
-  --size-xl: 1.25rem;
-  --size-2xl: 1.5rem;
-  --size-3xl: 1.875rem;
-  --size-4xl: 2.25rem;
-  --size-5xl: 3rem;
-  --size-6xl: 3.75rem;
-  --size-7xl: 4.5rem;
-  --size-8xl: 6rem;
-  --size-9xl: 8rem;
-  --size-10xl: 10rem;
+  /* dashboard-specific colors */
+  --clr-card-bg: #FFFFFF;       /* cards/panels */
+  --clr-card-shadow: rgba(0, 0, 0, 0.1); /* soft card shadow */
+  --clr-border: #E5E7EB;        /* subtle borders */
+
+  /* primary actions */
+  --clr-primary: #4F46E5;       /* buttons, links */
+  --clr-primary-hover: #6366F1;
+
+  /* income/expense */
+  --clr-income: #22C55E;        /* green for income */
+  --clr-income-light: #4ADE80;  
+  --clr-expense: #EF4444;       /* red for expenses */
+  --clr-expense-light: #F87171;
 }
-
-
 
 * {
   margin: 0;
@@ -48,14 +32,13 @@
 
 body {
   font-family: var(--font-primary);
-  background-color: var(--clr-dark);
-  color: var(--clr-light);
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
 }
-
 
 img,
 picture,
-cavnas,
+canvas,
 svg {
   display: block;
   max-width: 100%;
@@ -75,33 +58,31 @@ button {
   color: inherit;
 }
 
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  /* base of element own font size*/
   letter-spacing: -0.025em;
 }
-
 
 p {
   color: var(--clr-text);
 }
 
 a {
-  color: var(--clr-slate50);
+  color: var(--clr-primary);
+  text-decoration: none;
 }
 
 strong {
-  color: var(--clr-light);
+  color: var(--clr-text);
   font-weight: 900;
 }
 
 /* focus-visible for keyboard navigation */
 button:focus-visible,
 a:focus-visible {
-  outline: solid var(--clr-light);
+  outline: solid var(--clr-primary);
 }
