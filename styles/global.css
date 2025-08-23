@@ -1,0 +1,107 @@
+
+:root {
+  /* fonts */
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Source Code Pro", monospace;
+
+  /* colors */
+  --clr-dark: oklch(13% 0.028 261.692);
+  --clr-light: oklch(92.9% 0.013 255.508);
+  --clr-text: oklch(70.4% 0.04 256.788);
+  --clr-muted: #6b7c94;
+  --clr-slate50: oklch(98.4% 0.003 247.858);
+  --clr-slate100: oklch(96.8% 0.007 247.896);
+  --clr-slate800: #1e293b;
+  --clr-slate300: #cbd5e1;
+  --clr-bg: #0a101f;
+  
+  /* shadow */
+  --shadow-xl: 0 19px 38px rgba(15, 23, 42, 0.3),
+               0 15px 12px rgba(15, 23, 42, 0.22);
+
+  
+  /* sizes */
+  --size-xxs: 0.5rem;
+  --size-xs: 0.75rem;
+  --size-sm: 0.875rem;
+  --size-base: 1rem;
+  --size-lg: 1.125rem;
+  --size-xl: 1.25rem;
+  --size-2xl: 1.5rem;
+  --size-3xl: 1.875rem;
+  --size-4xl: 2.25rem;
+  --size-5xl: 3rem;
+  --size-6xl: 3.75rem;
+  --size-7xl: 4.5rem;
+  --size-8xl: 6rem;
+  --size-9xl: 8rem;
+  --size-10xl: 10rem;
+}
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: calc(1em + 0.5rem);
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+}
+
+
+img,
+picture,
+cavnas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  color: inherit;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* base of element own font size*/
+  letter-spacing: -0.025em;
+}
+
+
+p {
+  color: var(--clr-text);
+}
+
+a {
+  color: var(--clr-slate50);
+}
+
+strong {
+  color: var(--clr-light);
+  font-weight: 900;
+}
+
+/* focus-visible for keyboard navigation */
+button:focus-visible,
+a:focus-visible {
+  outline: solid var(--clr-light);
+}
