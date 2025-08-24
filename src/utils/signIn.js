@@ -1,5 +1,6 @@
 import validation from "./validation.js";
 import pushData from "./data.js";
+import cardLayout from "./cards.js";
 
 const signInFeature = () => {
   const signInBtn = document.querySelector('.header__btn');
@@ -8,6 +9,8 @@ const signInFeature = () => {
   const loginBtn = document.querySelector('.signup__page-btn');
   const name = document.querySelector('.header__name');
 
+  const header = document.querySelector('.header');
+
   const income = document.querySelector('.header__incomebtn');
   const expense = document.querySelector('.header__expensebtn');
 
@@ -15,9 +18,12 @@ const signInFeature = () => {
   const expenseModal = document.querySelector('.expense');
 
 
+  const incomeCard = document.querySelector('.cards__income-p');
+
   const cancelBtn = document.querySelector('.modal__btn-cancel');
   const cancelBtnExpense = document.querySelector('.modal__btn-cancel-expense');
 
+  const mainBody = document.querySelector('.main__body');
 
   const addBtn = document.querySelector('.modal__btn-add');
 
@@ -39,6 +45,9 @@ const signInFeature = () => {
       income.style.display = 'flex';
       expense.style.display = 'flex';
        transactions = JSON.parse(localStorage.getItem('transactions') || '[]');
+       const incomeTotal = cardLayout();
+       incomeCard.innerText = `$${incomeTotal}`;
+       mainBody.style.display = 'flex';
 
     }
   });
@@ -48,6 +57,8 @@ const signInFeature = () => {
   signInBtn.addEventListener('click', () => {
 
     signupPage.style.display = 'flex';
+
+    header.style.display = 'none';    
 
     main.style.display = 'none';
 
@@ -66,9 +77,15 @@ const signInFeature = () => {
 
     signOutBtn.style.display = 'flex'
 
+    header.style.display = 'flex';  
+
     name.style.display = 'flex'
 
     name.innerText = `👋 ${username}`;
+
+    const incomeTotal = cardLayout();
+    incomeCard.innerText = `$${incomeTotal}`;
+    mainBody.style.display = 'flex';
 
 
     income.style.display = 'flex';
@@ -90,6 +107,7 @@ const signInFeature = () => {
     income.style.display = 'none';
     expense.style.display = 'none';
 
+    mainBody.style.display = 'none';
     
 
     localStorage.removeItem('username');
@@ -139,11 +157,15 @@ const signInFeature = () => {
 
     } else if (e.target.classList.contains('incomesbtn')) {
       objData = validation('income');
+
      
   }
 
   if (objData){
     transactions = pushData(objData);
+    const incomeTotal = cardLayout();
+    incomeCard.innerText = `$${incomeTotal}`;
+    mainBody.style.display = 'flex';
   }
   
 })

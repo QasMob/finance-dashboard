@@ -38,22 +38,23 @@ const validation = (type) => {
 
   if (isValid){
      incomeModal.style.display = 'none';
+     const idNum = idIterable.next().value;
+
+      const incomeObj = {
+        id: idNum,
+        title: modalTitle,
+        category: modalCatagory,
+        ammount: modalAmmount,
+        date: modalDate,
+        type: type
+
+      };
+
+      return incomeObj;
   }
 
-
-  const idNum = idIterable.next().value;
-
-  const incomeObj = {
-    id: idNum,
-    title: modalTitle,
-    category: modalCatagory,
-    ammount: modalAmmount,
-    date: modalDate,
-    type: type
-
-  };
-
-  return incomeObj;
+  alert('invalid, please enter all fields');
+  
 
 
 
