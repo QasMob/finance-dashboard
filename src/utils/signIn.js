@@ -1,3 +1,5 @@
+import validation from "./validation.js";
+import pushData from "./data.js";
 
 const signInFeature = () => {
   const signInBtn = document.querySelector('.header__btn');
@@ -17,9 +19,13 @@ const signInFeature = () => {
   const cancelBtnExpense = document.querySelector('.modal__btn-cancel-expense');
 
 
+  const addBtn = document.querySelector('.modal__btn-add');
+
+
 
   const signOutBtn = document.querySelector('.header__signoutbtn');
 
+  let transactions = [];
 
   window.addEventListener('load', () => {
     const savedUsername = localStorage.getItem('username');
@@ -32,6 +38,7 @@ const signInFeature = () => {
       signOutBtn.style.display = 'flex'
       income.style.display = 'flex';
       expense.style.display = 'flex';
+       transactions = JSON.parse(localStorage.getItem('transactions') || '[]');
 
     }
   });
@@ -83,6 +90,8 @@ const signInFeature = () => {
     income.style.display = 'none';
     expense.style.display = 'none';
 
+    
+
     localStorage.removeItem('username');
   });
 
@@ -121,6 +130,23 @@ const signInFeature = () => {
 
   });
 
+
+  addBtn.addEventListener('click', (e) => {
+    let objData;
+    if(e.target.classList.contains('expensebtn')){
+      objData = validation('expense');
+      
+
+    } else if (e.target.classList.contains('incomesbtn')) {
+      objData = validation('income');
+     
+  }
+
+  if (objData){
+    transactions = pushData(objData);
+  }
+  
+})
 
 
 
