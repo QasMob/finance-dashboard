@@ -9,6 +9,15 @@ const signInFeature = () => {
   const income = document.querySelector('.header__incomebtn');
   const expense = document.querySelector('.header__expensebtn');
 
+  const incomeModal = document.querySelector('.income');
+  const expenseModal = document.querySelector('.expense');
+
+
+  const cancelBtn = document.querySelector('.modal__btn-cancel');
+  const cancelBtnExpense = document.querySelector('.modal__btn-cancel-expense');
+
+
+
   const signOutBtn = document.querySelector('.header__signoutbtn');
 
 
@@ -77,6 +86,40 @@ const signInFeature = () => {
     localStorage.removeItem('username');
   });
 
+
+
+  income.addEventListener('click', () => {
+    incomeModal.style.display = 'flex';
+  });
+
+  expense.addEventListener('click', () => {
+    expenseModal.style.display = 'flex';
+  });
+
+
+
+  cancelBtn.addEventListener('click', () => {
+    incomeModal.style.display = 'none';
+  }
+  );
+
+  cancelBtnExpense.addEventListener('click', () => {
+    expenseModal.style.display = 'none';
+  }
+  );
+
+
+  window.addEventListener('click', (e) => {
+
+    if(incomeModal.style.display === 'flex' && !incomeModal.contains(e.target) && e.target !== income){
+      incomeModal.style.display = 'none';
+    }
+
+    if (expenseModal.style.display === 'flex' && !expenseModal.contains(e.target) && e.target !== expense) {
+      expenseModal.style.display = 'none';
+    }
+
+  });
 
 
 
