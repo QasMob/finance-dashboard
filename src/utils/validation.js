@@ -56,8 +56,6 @@ const validation = (type) => {
   alert('invalid, please enter all fields');
   
 
-
-
 };
 
 export default validation;

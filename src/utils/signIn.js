@@ -1,6 +1,8 @@
 import validation from "./validation.js";
 import pushData from "./data.js";
 import cardLayout from "./cards.js";
+import tableGenerator from "./table.js";
+
 
 const signInFeature = () => {
   const signInBtn = document.querySelector('.header__btn');
@@ -8,6 +10,8 @@ const signInFeature = () => {
   const main = document.querySelector('.main');
   const loginBtn = document.querySelector('.signup__page-btn');
   const name = document.querySelector('.header__name');
+
+  const transactionSection = document.querySelector('.transactionTable');
 
   const header = document.querySelector('.header');
 
@@ -48,6 +52,8 @@ const signInFeature = () => {
        const incomeTotal = cardLayout();
        incomeCard.innerText = `$${incomeTotal}`;
        mainBody.style.display = 'flex';
+       transactionSection.style.display = 'block';
+       tableGenerator();
 
     }
   });
@@ -84,8 +90,10 @@ const signInFeature = () => {
     name.innerText = `👋 ${username}`;
 
     const incomeTotal = cardLayout();
+    tableGenerator();
     incomeCard.innerText = `$${incomeTotal}`;
     mainBody.style.display = 'flex';
+    transactionSection.style.display = 'block';
 
 
     income.style.display = 'flex';
@@ -108,6 +116,7 @@ const signInFeature = () => {
     expense.style.display = 'none';
 
     mainBody.style.display = 'none';
+    transactionSection.style.display = 'none';
     
 
     localStorage.removeItem('username');
@@ -164,8 +173,10 @@ const signInFeature = () => {
   if (objData){
     transactions = pushData(objData);
     const incomeTotal = cardLayout();
+    tableGenerator();
     incomeCard.innerText = `$${incomeTotal}`;
     mainBody.style.display = 'flex';
+    transactionSection.style.display = 'block';
   }
   
 })
