@@ -4,9 +4,13 @@ import cardLayout from "./cards.js";
 import tableGenerator from "./table.js";
 import addToExpense from './expense.js';
 import balanceDifference from './balance.js';
+import doughnutChart from "./donutChart.js";
 
 
 const signInFeature = () => {
+
+
+
   const signInBtn = document.querySelector('.header__btn');
   const signupPage = document.querySelector('.signup__page');
   const main = document.querySelector('.main');
@@ -18,6 +22,9 @@ const signInFeature = () => {
   const transactionSection = document.querySelector('.transactionTable');
 
   const header = document.querySelector('.header');
+
+  const donutChart = document.querySelector('.chart');
+
 
   const income = document.querySelector('.header__incomebtn');
   const expense = document.querySelector('.header__expensebtn');
@@ -69,8 +76,10 @@ const signInFeature = () => {
        incomeCard.innerText = `$${incomeTotal}`;
        expenseCard.innerText = `$${expenseTotal}`;
        mainBody.style.display = 'flex';
+       donutChart.style.display = 'block';
        transactionSection.style.display = 'block';
        tableGenerator();
+        setTimeout(() => doughnutChart(), 0);
 
     }
   });
@@ -114,7 +123,9 @@ const signInFeature = () => {
 
     const incomeTotal = cardLayout();
     const expenseTotal = addToExpense();
+    donutChart.style.display = 'block';
     tableGenerator();
+    setTimeout(() => doughnutChart(), 0);
     incomeCard.innerText = `$${incomeTotal}`;
     expenseCard.innerText = `$${expenseTotal}`
     const balanceTotal = balanceDifference(incomeTotal, expenseTotal);
@@ -150,6 +161,7 @@ const signInFeature = () => {
     expense.style.display = 'none';
 
     mainBody.style.display = 'none';
+       donutChart.style.display = 'none';
     transactionSection.style.display = 'none';
     
 
@@ -161,12 +173,14 @@ const signInFeature = () => {
   income.addEventListener('click', () => {
     incomeModal.style.display = 'flex';
     mainBody.style.display = 'none';
+           donutChart.style.display = 'none';
     transactionSection.style.display = 'none';
   });
 
   expense.addEventListener('click', () => {
     expenseModal.style.display = 'flex';
     mainBody.style.display = 'none';
+           donutChart.style.display = 'none';
     transactionSection.style.display = 'none';
   });
 
@@ -175,6 +189,7 @@ const signInFeature = () => {
   cancelBtn.addEventListener('click', () => {
     incomeModal.style.display = 'none';
     mainBody.style.display = 'flex';
+           donutChart.style.display = 'block';
     transactionSection.style.display = 'block';
   }
   );
@@ -182,6 +197,7 @@ const signInFeature = () => {
   cancelBtnExpense.addEventListener('click', () => {
     expenseModal.style.display = 'none';
     mainBody.style.display = 'flex';
+         donutChart.style.display = 'block';
     transactionSection.style.display = 'block';
   }
   );
@@ -216,7 +232,9 @@ const signInFeature = () => {
       transactions = pushData(objData);
       const incomeTotal = cardLayout();
       const expenseTotal = addToExpense();
+      donutChart.style.display = 'block';
       tableGenerator();
+      setTimeout(() => doughnutChart(), 0);
       incomeCard.innerText = `$${incomeTotal}`;
       expenseCard.innerText = `$${expenseTotal}`
       const balanceTotal = balanceDifference(incomeTotal, expenseTotal);
@@ -235,7 +253,7 @@ const signInFeature = () => {
   
     })
   });
-  
+
 
 
 

@@ -27,11 +27,13 @@ const validation = (type) => {
 
     const title = titleInput.value.trim();
     const ammount = parseFloat(amountInput.value);
-    const category = categoryInput.value;
+    const selectedOption = categoryInput.selectedOptions[0]; 
+    const optgroup = selectedOption.parentElement; 
+    const mainCategory = optgroup.label || optgroup.getAttribute("label"); 
     const date = dateInput.value;
 
 
-  if (!title || isNaN(ammount) || ammount <= 0 || !category || !date) {
+  if (!title || isNaN(ammount) || ammount <= 0 || !mainCategory || !date) {
     alert("Invalid input. Please fill in all fields correctly.");
     return null;
   }
@@ -43,7 +45,7 @@ const validation = (type) => {
     const obj = {
       id: idNum,
       title,
-      category,
+      category : mainCategory,
       ammount,
       date,
       type

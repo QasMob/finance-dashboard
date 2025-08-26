@@ -61,8 +61,11 @@
         <div>
              <label for="catagory">Catagory: </label>
         <select name="catagory" id="modal__catagory">
-          <option value="Salary">Salary / Paycheck</option>
 
+
+           <optgroup label="Salary">
+          <option value="Salary">Salary / Paycheck</option>
+        </optgroup> 
         </select>
         </div>
 
@@ -108,56 +111,56 @@
         <select name="category" id="modal__category">
           <option value="">Select a category</option>
 
-          <optgroup label="Housing">
+          <optgroup value="housing"  label="Housing">
             <option value="rent">Rent</option>
             <option value="mortgage">Mortgage</option>
             <option value="utilities">Utilities</option>
           </optgroup>
 
-          <optgroup label="Transportation">
+          <optgroup value="transportation" label="Transportation">
             <option value="gas">Gas</option>
             <option value="uber">Uber</option>
             <option value="bus">Bus</option>
             <option value="train">Train</option>
           </optgroup>
 
-          <optgroup label="Food & Drinks">
+          <optgroup value="food" label="Food & Drinks">
             <option value="groceries">Groceries</option>
             <option value="restaurants">Restaurants</option>
             <option value="coffee">Coffee</option>
           </optgroup>
 
-          <optgroup label="Entertainment">
+          <optgroup value="entertainment" label="Entertainment">
             <option value="movies">Movies</option>
             <option value="games">Games</option>
             <option value="subscriptions">Subscriptions (Netflix, Spotify, etc.)</option>
           </optgroup>
 
-          <optgroup label="Health">
+          <optgroup value="health" label="Health">
             <option value="gym">Gym</option>
             <option value="doctor">Doctor</option>
             <option value="medicine">Medicine</option>
           </optgroup>
-
-          <optgroup label="Education">
+ 
+          <optgroup value="education" label="Education">
             <option value="books">Books</option>
             <option value="courses">Courses</option>
             <option value="tuition">Tuition</option>
           </optgroup>
 
-          <optgroup label="Shopping">
+          <optgroup value="shopping" label="Shopping">
             <option value="clothes">Clothes</option>
             <option value="electronics">Electronics</option>
             <option value="accessories">Accessories</option>
           </optgroup>
 
-          <optgroup label="Travel">
+          <optgroup  value="travel" label="Travel">
             <option value="flights">Flights</option>
             <option value="hotels">Hotels</option>
             <option value="trips">Trips</option>
           </optgroup>
 
-          <optgroup label="Other Expenses">
+          <optgroup  value="other" label="Other Expenses">
             <option value="miscellaneous">Miscellaneous costs</option>
           </optgroup>
         </select>
@@ -178,7 +181,8 @@
 
     <div class="main__body">
       <section class="container cards">
-        <div class="cards__income">
+       <div class="cards__container">
+         <div class="cards__income">
           <h2 class="cards__income-title">Income</h2>
           <p class="cards__income-p">$0</p>
         </div>
@@ -190,9 +194,14 @@
           <h2 class="cards__balance-title">Balance</h2>
           <p class="cards__balance-p">$0</p>
         </div>
+       </div>
+       <div class="chart ">
+         <canvas id="myChart"></canvas>
+
+    </div>
     </section>
     </div>
-    <section class="container transactionTable section">
+    <section class="container transactionTable ">
       <div>
         <h2>Transactions List</h2>
         <table id="transaction-table">
@@ -213,6 +222,8 @@
         </table>
       </div>
     </section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </main>
   <footer class="container section footer"></footer>
 </body>

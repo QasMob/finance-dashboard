@@ -5,18 +5,28 @@
   gap: 3rem;
 }
 
+
+.cards__container {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  /* border: 5px solid red; */
+}
+
 .cards__income, .cards__expense , .cards__balance{
   border: 1px solid var(--clr-border);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   padding: 1rem;
   width: 10rem;
+  height:10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   gap: 0.5rem;
 }
+
 
 .red {
   color: red;
@@ -30,7 +40,7 @@
 
 .transactionTable {
   background-color: white; 
-    border-radius: 8px;      
+  border-radius: 8px;    
   box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
 }
 
@@ -48,5 +58,23 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
 }
 
+
+#myChart {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+ 
+.chart {
+  width:30rem;
+  position: relative;
+  /* border: 1px solid red; */
+  display: none;
+  width: 60rem;
+  height: 30rem;
+  padding: 50px;
+  margin: 0 auto;
+}
 
 

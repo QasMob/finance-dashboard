@@ -2,6 +2,7 @@ import tableGenerator from "./table.js";
 import cardLayout from "./cards.js";
 import addToExpense from "./expense.js";
 import balanceDifference from "./balance.js";
+import doughnutChart from "./donutChart.js";
 
 const deleteDataTable = (id) => {
   
@@ -15,6 +16,7 @@ const deleteDataTable = (id) => {
     localStorage.setItem('transactions', JSON.stringify(transactions));
     
     tableGenerator();
+    doughnutChart();
 
   const balanceCard = document.querySelector('.cards__balance-p');
   const balanceBorder = document.querySelector('.cards__balance');
@@ -33,6 +35,8 @@ const deleteDataTable = (id) => {
   document.querySelector('.cards__income-p').innerText = `$${incomeTotal}`;
   document.querySelector('.cards__expense-p').innerText = `$${expenseTotal}`;
   document.querySelector('.cards__balance-p').innerText = `$${balanceTotal}`;
+
+  
 
 
 };
