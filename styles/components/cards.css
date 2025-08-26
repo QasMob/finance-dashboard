@@ -2,9 +2,10 @@
   /* border: 1px solid red; */
   display: flex;
   margin-top: 5rem;
+  gap: 3rem;
 }
 
-.cards__income {
+.cards__income, .cards__expense , .cards__balance{
   border: 1px solid var(--clr-border);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
@@ -17,11 +18,35 @@
   gap: 0.5rem;
 }
 
-.cards__income-title {
-  /* border: 1px solid red; */
-
+.red {
+  color: red;
+  font-weight: 800;
 }
 
-.cards__income-p {
-  /* border: 1px solid red; */
+.redBorder {
+    border: 3px solid rgb(255, 91, 91);
 }
+
+
+.transactionTable {
+  background-color: white; 
+    border-radius: 8px;      
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+}
+
+#transaction-table {
+  border-collapse: separate;
+  border-spacing: 0 1.5rem;   
+  width: 100%;
+}
+
+.table__header__row {
+  text-align: left;
+  background-color: white; 
+  height: 3rem;
+  border-radius: 8px;      
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+}
+
+
+

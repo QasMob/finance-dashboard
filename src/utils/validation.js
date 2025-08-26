@@ -16,46 +16,41 @@ const idIterable = generatorId();
 
 const validation = (type) => {
 
-  const incomeModal = document.querySelector('.income');
- 
-  const expenseModal = document.querySelector('.expense');
+  const modal = type === "income" ? document.querySelector(".income") : document.querySelector(".expense");
 
-  const modalTitle = document.getElementById('modal__title').value.trim();
 
-  const modalAmmount = parseFloat(document.getElementById('modal__ammount').value.trim());
+  const titleInput = modal.querySelector("#modal__title");
+  const amountInput = modal.querySelector("#modal__ammount");
+  const categoryInput = modal.querySelector("select");
+  const dateInput = modal.querySelector("#modal__date");
 
-   
-  const modalCatagory = document.getElementById('modal__catagory').value;
-   
-  const modalDate = document.getElementById('modal__date').value;
 
-  let isValid = false;
+    const title = titleInput.value.trim();
+    const ammount = parseFloat(amountInput.value);
+    const category = categoryInput.value;
+    const date = dateInput.value;
 
-  if (modalTitle !== '' && modalAmmount > 0 && !isNaN(modalAmmount) && modalDate){
-    isValid = true;
+
+  if (!title || isNaN(ammount) || ammount <= 0 || !category || !date) {
+    alert("Invalid input. Please fill in all fields correctly.");
+    return null;
   }
 
+    modal.style.display = "none";
 
-  if (isValid){
-     incomeModal.style.display = 'none';
-     const idNum = idIterable.next().value;
 
-      const incomeObj = {
-        id: idNum,
-        title: modalTitle,
-        category: modalCatagory,
-        ammount: modalAmmount,
-        date: modalDate,
-        type: type
+    const idNum = idIterable.next().value;
+    const obj = {
+      id: idNum,
+      title,
+      category,
+      ammount,
+      date,
+      type
+    };
 
-      };
-
-      return incomeObj;
-  }
-
-  alert('invalid, please enter all fields');
-  
-
+  return obj;
 };
+
 
 export default validation;
