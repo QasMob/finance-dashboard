@@ -12,6 +12,12 @@
   flex-wrap: wrap;
 }
 
+.btnDiv {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
 
 #myChart, #barChart {
   width:  30rem;
@@ -20,10 +26,12 @@
 
 #myChart {
   margin-bottom: 5rem;
+  border: var(--clr-border);
 }
 
 #barChart {
   margin-bottom: 5rem;
+    border: var(--clr-border);
 }
 
 
@@ -78,3 +86,15 @@
 }
 
 
+.transactionTable > div {
+  padding: 2rem; 
+}
+
+#transaction-table th,
+#transaction-table td {
+  padding: 0.75rem 1rem; 
+}
+
+.transactionTable h2 {
+  margin-bottom: 1rem;
+}

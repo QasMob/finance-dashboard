@@ -119,7 +119,7 @@ const signInFeature = () => {
 
     name.style.display = 'flex'
 
-    name.innerText = `👋 ${username}`;
+    name.innerText = `Welcome ${username}`;
 
     const incomeTotal = cardLayout();
     const expenseTotal = addToExpense();
@@ -173,7 +173,7 @@ const signInFeature = () => {
   income.addEventListener('click', () => {
     incomeModal.style.display = 'flex';
     mainBody.style.display = 'none';
-           donutChart.style.display = 'none';
+     donutChart.style.display = 'none';
     transactionSection.style.display = 'none';
   });
 

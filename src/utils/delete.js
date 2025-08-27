@@ -11,12 +11,12 @@ const deleteDataTable = (id) => {
 
     
 
-    transactions = transactions.filter(obj => obj.id !== id);
+    const updatedTransactions = transactions.filter(obj => obj.id !== id);
     
-    localStorage.setItem('transactions', JSON.stringify(transactions));
+    localStorage.setItem('transactions', JSON.stringify(updatedTransactions));
     
     tableGenerator();
-    doughnutChart();
+    setTimeout(() => doughnutChart(), 0);
 
   const balanceCard = document.querySelector('.cards__balance-p');
   const balanceBorder = document.querySelector('.cards__balance');

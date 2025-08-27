@@ -56,6 +56,8 @@
             </div>
        
         </div>
+
+        
       
         <div class="modal__income2">
         <div>
@@ -66,6 +68,19 @@
            <optgroup label="Salary">
           <option value="Salary">Salary / Paycheck</option>
         </optgroup> 
+         <optgroup label="Bonus">
+            <option value="Bonus">Bonus</option>
+          </optgroup>
+          <optgroup label="Investments">
+            <option value="Dividends">Dividends</option>
+            <option value="Interest">Interest</option>
+            <option value="Stocks">Stocks</option>
+          </optgroup>
+          <optgroup label="Other Income">
+            <option value="Freelance">Freelance</option>
+            <option value="Side Hustle">Side Hustle</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+          </optgroup>
         </select>
         </div>
 
@@ -85,6 +100,56 @@
 
 
 
+  <!-- Income Edit Modal -->
+<div class="modal income-edit container">
+  <div class="income__container">
+    <h2>Edit Income</h2>
+    <div class="modal__income1">
+      <div>
+        <label for="edit-income-title">Title: </label>
+        <input type="text" id="edit-income-title">
+      </div>
+      <div>
+        <label for="edit-income-amount">Amount: </label>
+        <input type="number" id="edit-income-amount">
+      </div>
+    </div>
+
+    <div class="modal__income2">
+      <div>
+        <label for="edit-income-category">Category: </label>
+        <select name="category" id="edit-income-category">
+          <optgroup label="Salary">
+            <option value="Salary">Salary / Paycheck</option>
+          </optgroup>
+          <optgroup label="Bonus">
+            <option value="Bonus">Bonus</option>
+          </optgroup>
+          <optgroup label="Investments">
+            <option value="Dividends">Dividends</option>
+            <option value="Interest">Interest</option>
+            <option value="Stocks">Stocks</option>
+          </optgroup>
+          <optgroup label="Other Income">
+            <option value="Freelance">Freelance</option>
+            <option value="Side Hustle">Side Hustle</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div>
+        <label for="edit-income-date">Date: </label>
+        <input type="date" id="edit-income-date">
+      </div>
+    </div>
+
+    <div class="modal__btn-container">
+      <button class="btn modal__btn-cancel-edit-income">Cancel</button>
+      <button class="btn modal__btn-save-edit-income">Save Changes</button>
+    </div>
+  </div>
+</div>
 
 
 
@@ -187,7 +252,7 @@
           <p class="cards__income-p">$0</p>
         </div>
         <div class="cards__expense">
-          <h2 class="cards__expense-title">Expense</h2>
+          <h2 class="cards__expense-title">Expenses</h2>
           <p class="cards__expense-p">$0</p>
         </div>
         <div class="cards__balance">

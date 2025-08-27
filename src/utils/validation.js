@@ -1,17 +1,12 @@
 import signInFeature from "./signIn.js";
 
-function* generatorId(){
+  let lastId = Number(localStorage.getItem('lastId') || 0);
 
-  let id = 1;
-
-  while(true){
-    yield id;
-    id++;
-  }
-
-}
-
-const idIterable = generatorId();
+  const getNextId = () => {
+    lastId++;
+    localStorage.setItem('lastId', lastId); 
+    return lastId;
+  };
 
 
 const validation = (type) => {
@@ -41,15 +36,17 @@ const validation = (type) => {
     modal.style.display = "none";
 
 
-    const idNum = idIterable.next().value;
+    // const idNum = idIterable.next().value;
+  
     const obj = {
-      id: idNum,
+      id: getNextId(),
       title,
       category : mainCategory,
       ammount,
       date,
       type
     };
+    
 
   return obj;
 };
