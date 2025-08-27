@@ -1,16 +1,35 @@
 .cards {
   /* border: 1px solid red; */
   display: flex;
+  justify-content: space-between;
   margin-top: 5rem;
-  gap: 3rem;
+}
+.chart {
+  /* border: 1px solid red; */
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+#myChart, #barChart {
+  width:  30rem;
+  height: 20rem;
+}
+
+#myChart {
+  margin-bottom: 5rem;
+}
+
+#barChart {
+  margin-bottom: 5rem;
 }
 
 
 .cards__container {
   display: flex;
-  width: 100%;
   gap: 1rem;
-  /* border: 5px solid red; */
 }
 
 .cards__income, .cards__expense , .cards__balance{
@@ -56,25 +75,6 @@
   height: 3rem;
   border-radius: 8px;      
   box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
-}
-
-
-#myChart {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
- 
-.chart {
-  width:30rem;
-  position: relative;
-  /* border: 1px solid red; */
-  display: none;
-  width: 60rem;
-  height: 30rem;
-  padding: 50px;
-  margin: 0 auto;
 }
 
 

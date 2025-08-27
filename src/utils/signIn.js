@@ -54,7 +54,7 @@ const signInFeature = () => {
     const savedUsername = localStorage.getItem('username');
 
     if (savedUsername) {
-      name.innerText = `👋 ${savedUsername}`;
+      name.innerText = `Welcome ${savedUsername}`;
       name.style.display = 'flex';
       signInBtn.style.display = 'none';
       main.style.display = 'block';

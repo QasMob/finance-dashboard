@@ -8,7 +8,7 @@
 
 .header__title-container {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
 
 }
 
