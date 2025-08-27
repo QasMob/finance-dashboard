@@ -12,6 +12,10 @@
   display: none;
 }
 
+.edit-expense {
+  display: none;
+}
+
  .expense {
   display: none; 
   flex-direction: column;

@@ -34,8 +34,8 @@
       <div class="header__btn-container">
         <button class="header__btn btn">Sign in</button>
         <button class="header__btn header__signoutbtn btn">Sign Out</button>
-        <button class="header__btn header__incomebtn  btn">+ Income</button>
-        <button class="header__btn  header__expensebtn btn">- Expense</button>
+        <button class="header__btn header__incomebtn  btn">+</button>
+        <button class="header__btn  header__expensebtn btn">-</button>
       </div>
     </header>
     <main class="main">
@@ -97,6 +97,98 @@
 
       </div>
     </div>
+
+<!-- Expense Edit Modal -->
+ <div class="modal edit-expense container">
+  <div class="expense__container">
+    <h2>Edit Expense</h2>
+
+    <div class="modal__income1">
+      <div>
+        <label for="edit-title">Title: </label>
+        <input type="text" id="edit__title">
+      </div>
+
+      <div>
+        <label for="edit-amount">Amount: </label>
+        <input type="number" id="edit__amount">
+      </div>
+    </div>
+
+    <div class="modal__income2">
+      <div>
+        <label for="edit-category">Category: </label>
+        <select name="edit-category" id="edit__category">
+          <option value="">Select a category</option>
+
+          <optgroup value="housing" label="Housing">
+            <option value="rent">Rent</option>
+            <option value="mortgage">Mortgage</option>
+            <option value="utilities">Utilities</option>
+          </optgroup>
+
+          <optgroup value="transportation" label="Transportation">
+            <option value="gas">Gas</option>
+            <option value="uber">Uber</option>
+            <option value="bus">Bus</option>
+            <option value="train">Train</option>
+          </optgroup>
+
+          <optgroup value="food" label="Food & Drinks">
+            <option value="groceries">Groceries</option>
+            <option value="restaurants">Restaurants</option>
+            <option value="coffee">Coffee</option>
+          </optgroup>
+
+          <optgroup value="entertainment" label="Entertainment">
+            <option value="movies">Movies</option>
+            <option value="games">Games</option>
+            <option value="subscriptions">Subscriptions (Netflix, Spotify, etc.)</option>
+          </optgroup>
+
+          <optgroup value="health" label="Health">
+            <option value="gym">Gym</option>
+            <option value="doctor">Doctor</option>
+            <option value="medicine">Medicine</option>
+          </optgroup>
+
+          <optgroup value="education" label="Education">
+            <option value="books">Books</option>
+            <option value="courses">Courses</option>
+            <option value="tuition">Tuition</option>
+          </optgroup>
+
+          <optgroup value="shopping" label="Shopping">
+            <option value="clothes">Clothes</option>
+            <option value="electronics">Electronics</option>
+            <option value="accessories">Accessories</option>
+          </optgroup>
+
+          <optgroup value="travel" label="Travel">
+            <option value="flights">Flights</option>
+            <option value="hotels">Hotels</option>
+            <option value="trips">Trips</option>
+          </optgroup>
+
+          <optgroup value="other" label="Other Expenses">
+            <option value="miscellaneous">Miscellaneous costs</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div>
+        <label for="edit-date">Date: </label>
+        <input type="date" id="edit__date">
+      </div>
+    </div>
+
+    <div class="modal__btn-container">
+      <button class="btn modal__btn-cancel-edit-expense">Cancel</button>
+      <button class="btn modal__btn-save-edit-expense">Save Changes</button>
+    </div>
+  </div>
+</div>
+
 
 
 
