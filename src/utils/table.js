@@ -4,7 +4,7 @@ import updateDataTable from "./update.js";
 
 const renderTable = (transactionsArray) => {
   const table = document.querySelector('.tableBody');
-  table.innerHTML = ""; // clear old rows
+  table.innerHTML = ""; 
 
   transactionsArray.forEach(obj => {
     const row = document.createElement('tr');
@@ -59,17 +59,47 @@ const tableGenerator = () => {
 
   const searchInput = document.querySelector('#search');
 
+  const filterIcon = document.querySelector('.filter__icon');
+
+  const filterBtn = document.querySelector('#filter-type');
+
+
+
 
   searchInput.addEventListener('input', (e) => {
     const query = searchInput.value.toLowerCase();
 
     const filtered = transactions.filter(t =>
-      t.title.toLowerCase().includes(query) 
-    )
+      t.title.toLowerCase().includes(query) ||
+      t.category.toLowerCase().includes(query) ||
+      t.date.includes(query)
+    );
 
-   renderTable(filtered); 
+     renderTable(filtered); 
   })
+
+  filterIcon.addEventListener('click', () => {
+     filterBtn.classList.toggle('hide');
+     filterBtn.addEventListener('change', () => {
+    const selected = filterBtn.value;
+    let filtered = transactions;
+    if (selected !== 'all'){
+      filtered = transactions.filter(obj => obj.type === selected);
+        filterBtn.classList.toggle('hide');
+    } else if (selected === 'all'){
+       filterBtn.classList.toggle('hide');
+    }
+    
+    renderTable(filtered);
+
+  });
+
+  });
+
   
+
+
+
   transactions.forEach(obj => {
     const row = document.createElement('tr');
     row.dataset.id = obj.id;
