@@ -338,20 +338,30 @@
 
     <div class="main__body">
       <section class="container cards">
-       <div class="cards__container">
-         <div class="cards__income">
-          <h2 class="cards__income-title">Income</h2>
-          <p class="cards__income-p">$0</p>
+        <div class="cards__left-section">
+          <div class="cards__container">
+            <div class="cards__income">
+              <h2 class="cards__income-title">Income</h2>
+              <p class="cards__income-p">$0</p>
+            </div>
+            <div class="cards__expense">
+              <h2 class="cards__expense-title">Expenses</h2>
+              <p class="cards__expense-p">$0</p>
+            </div>
+            <div class="cards__balance">
+              <h2 class="cards__balance-title">Balance</h2>
+              <p class="cards__balance-p">$0</p>
+            </div>
+          </div>
+              <section class="container news-widget">
+              <div class="news__container">
+                  <h2 class="news-title">Latest Financial News</h2>
+                 <ul id="news-list"></ul>
+     
+              </div>
+              </section>
         </div>
-        <div class="cards__expense">
-          <h2 class="cards__expense-title">Expenses</h2>
-          <p class="cards__expense-p">$0</p>
-        </div>
-        <div class="cards__balance">
-          <h2 class="cards__balance-title">Balance</h2>
-          <p class="cards__balance-p">$0</p>
-        </div>
-       </div>
+       
        <div class="chart ">
          <canvas id="myChart"></canvas>
          <canvas id="barChart"></canvas>
@@ -359,7 +369,8 @@
        </div>
 
     </section>
-    </div>
+  </div>
+
     <section class="container transactionTable ">
  <div>
   <div class="transaction__top">

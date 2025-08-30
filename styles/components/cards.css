@@ -1,3 +1,44 @@
+
+.cards__left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.liElement {
+  max-width: 45ch;
+}
+
+.news-title {
+  margin-bottom: 1rem;
+}
+
+
+.news__container{ 
+  border: 1px solid var(--clr-border);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 1000px;
+
+}
+
+
+.li__container {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+  max-width: 300px;
+  min-height: 300px;
+}
+
+#news-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .transaction__top {
   /* border: 1px solid red; */
   display: flex;
@@ -70,11 +111,38 @@
     border: var(--clr-border);
 }
 
+a:hover {
+  color: var(--clr-primary-hover);
+}
+
+
+.transactionTable {
+  margin-top: 5rem;
+}
+
+
+.liElement a {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.liElement p {
+  margin-bottom: 1rem;
+}
+
+
+#news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 
 .cards__container {
   display: flex;
   gap: 1rem;
 }
+
 
 .cards__income, .cards__expense , .cards__balance{
   border: 1px solid var(--clr-border);

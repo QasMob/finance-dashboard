@@ -74,6 +74,7 @@ p {
 a {
   color: var(--clr-primary);
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 strong {
