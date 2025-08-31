@@ -95,6 +95,18 @@
   justify-content: flex-start;
 }
 
+.news__btn-container {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+
+.disableBtn {
+  color: gray;
+}
+
 
 #myChart, #barChart {
   width:  30rem;
