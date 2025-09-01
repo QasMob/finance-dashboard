@@ -1,12 +1,12 @@
 .btn {
   border: 2px solid var(--clr-border);
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 0.5rem 1rem;
-  transition: box-shadow 3s;
+  transition: box-shadow 0.2s ease;
 }
 
 .btn:hover {
-  box-shadow: var(--clr-card-shadow);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .container {

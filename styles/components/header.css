@@ -7,9 +7,17 @@
 }
 
 .header__title-container {
-  display: flex;
-  align-items: flex-end;
+  /* border: 1px solid red; */
 
+}
+
+.header__title {
+  /* border: 1px solid red; */
+}
+
+.header__title__div {
+  display: flex;
+  align-items: baseline;
 }
 
 .header__signoutbtn {

@@ -1,4 +1,4 @@
-.income {
+.income, .income-edit {
   display: none; 
   flex-direction: column;
   width: 100vw;
@@ -16,7 +16,7 @@
   display: none;
 }
 
- .expense {
+ .expense, .edit-expense{
   display: none; 
   flex-direction: column;
   width: 100vw;
