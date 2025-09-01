@@ -174,6 +174,7 @@ a:hover {
 
 .cards__container {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
@@ -229,4 +230,132 @@ a:hover {
 
 .transactionTable h2 {
   margin-bottom: 1rem;
+}
+
+
+
+/* xs */
+@media (min-width: 475px) {
+.table-responsive {
+  overflow-x: auto;              /* horizontal scroll if needed */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
+}
+
+
+
+.cards {
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.transactionTable {
+  margin-top: 20rem;
+}
+
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* ensures table is scrollable if columns exceed screen */
+}
+
+.table-responsive th,
+.table-responsive td {
+  padding: 0.5rem 1rem;
+  text-align: left;
+  white-space: nowrap; /* prevents cells from wrapping */
+}
+
+/* Optional: nice scrollbar for desktop */
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
+
+}
+
+/* sm */
+@media (max-width: 640px) {
+
+
+
+.cards {
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+
+.transactionTable {
+  margin-top: 20rem;
+}
+
+  .transaction__top {
+    /* border: 1px solid red; */
+    flex-direction: column;
+  } 
+
+
+.table-responsive {
+  overflow-x: auto;              /* horizontal scroll if needed */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
+}
+
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* ensures table is scrollable if columns exceed screen */
+}
+
+.table-responsive th,
+.table-responsive td {
+  padding: 0.5rem 1rem;
+  text-align: left;
+  white-space: nowrap; /* prevents cells from wrapping */
+}
+
+/* Optional: nice scrollbar for desktop */
+.table-responsive::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
+
+
+}
+
+/* md */
+@media (min-width: 768px) {
+.cards {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.transactionTable {
+  margin-top: 5rem;
+}
+}
+
+/* lg */
+@media (min-width: 1024px) {
+
+
+
+}
+
+/* xl */
+@media (min-width: 1280px) {
+
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+
 }

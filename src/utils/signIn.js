@@ -43,6 +43,7 @@ const signInFeature = () => {
 
   const incomeModal = document.querySelector('.income');
   const expenseModal = document.querySelector('.expense');
+  const signOutBtn = document.querySelector('.header__signoutbtn');
 
 
   const incomeCard = document.querySelector('.cards__income-p');
@@ -58,7 +59,6 @@ const signInFeature = () => {
 
 
 
-  const signOutBtn = document.querySelector('.header__signoutbtn');
 
   let transactions = [];
 
@@ -267,7 +267,15 @@ const signInFeature = () => {
   
     })
   });
+  
 
+  const mobileBars = document.querySelector('.mobile__nav');
+  const whiteBg = document.querySelector('.white-bg');
+
+  mobileBars.addEventListener('click', () => {
+    whiteBg.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  });
 
 
 
