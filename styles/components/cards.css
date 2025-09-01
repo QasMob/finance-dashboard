@@ -32,6 +32,20 @@
   min-height: 300px;
 }
 
+
+.transactionTable {
+  /* border: 1px solid red; */
+  background-color: none;
+}
+
+.transactionSec {
+  /* border: 5px solid green; */
+  background-color: white; 
+  border-radius: 8px;    
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+}
+
+
 #news-list {
   display: flex;
   flex-direction: row;
@@ -103,10 +117,18 @@
 }
 
 
+
 .disableBtn {
   color: gray;
+  
 }
 
+
+.chart {
+  width: 100%;
+  max-width: 450px; 
+  height: 500px;    
+}
 
 #myChart, #barChart {
   width:  30rem;
@@ -180,12 +202,6 @@ a:hover {
     border: 3px solid rgb(255, 91, 91);
 }
 
-
-.transactionTable {
-  background-color: white; 
-  border-radius: 8px;    
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
-}
 
 #transaction-table {
   border-collapse: separate;

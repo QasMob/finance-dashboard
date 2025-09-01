@@ -15,6 +15,7 @@
    <link rel="stylesheet" href="styles/components/main.css">
    <link rel="stylesheet" href="styles/utils.css">
   <title>Finanace Dashboard</title>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
   <script type="module" defer  src="./src/main.js"></script>
 </head>
 <body>
@@ -353,7 +354,7 @@
               <p class="cards__balance-p">$0</p>
             </div>
           </div>
-              <section class="container news-widget">
+             
               <div class="news__container">
                   <h2 class="news-title">Latest Financial News</h2>
                  <ul id="news-list"></ul>
@@ -362,7 +363,7 @@
                     <button class="btn news-next">Next</button>
                   </div>
               </div>
-              </section>
+      
         </div>
        
        <div class="chart ">
@@ -375,7 +376,8 @@
   </div>
 
     <section class="container transactionTable ">
- <div>
+      <div class="transactionSec">
+         <div>
   <div class="transaction__top">
     <h2>Transactions List</h2>
     <div class="transaction__top-right" style="display: flex; align-items: center; gap: 0.5rem;">
@@ -416,6 +418,7 @@
               <!-- inject rows  tr + td -->
             </tbody>
         </table>
+      </div>
       </div>
     </section>
 

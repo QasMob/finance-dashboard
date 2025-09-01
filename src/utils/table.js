@@ -18,6 +18,7 @@ const renderTable = (transactionsArray) => {
     const informationAction = document.createElement('td');
     const btnDiv = document.createElement('div');
     btnDiv.classList.add('btnDiv');
+    row.classList.add('tablerow');
 
     informationTitle.innerText = obj.title;
     informationCategory.innerText = obj.category;
@@ -37,7 +38,9 @@ const renderTable = (transactionsArray) => {
     btnDiv.appendChild(deleteBtns);
     informationAction.appendChild(btnDiv);
 
+    
     row.append(informationTitle, informationType, informationCategory, informationAmount, informationDate, informationAction);
+    
     table.appendChild(row);
 
     deleteBtns.addEventListener('click', () => deleteDataTable(obj.id));

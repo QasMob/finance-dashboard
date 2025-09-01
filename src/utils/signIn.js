@@ -7,6 +7,18 @@ import balanceDifference from './balance.js';
 import doughnutChart from "./donutChart.js";
 
 
+function runAnimations(){
+  
+const timeline = gsap.timeline({defaults: {duration: 1}});
+
+timeline
+.from('.header', {y:'-100', ease: 'power1.out'})
+.from('.cards__container', {x : '-100vw', ease: 'power1.out'}, {delay: 3})
+.from('.chart', {y : '-100vh', ease: 'power1.out'}, {delay : 3})
+.from('.news__container', {y : '100vh', ease : 'power1.out'}, {delay: 3})
+.from('.transactionTable', {y : '100vw', ease: 'power1.out'}, {delay: 3})
+}  
+
 const signInFeature = () => {
 
 
@@ -80,8 +92,10 @@ const signInFeature = () => {
        transactionSection.style.display = 'block';
        tableGenerator();
         setTimeout(() => doughnutChart(), 0);
-
+        
+        runAnimations();
     }
+
   });
 
   
@@ -144,7 +158,7 @@ const signInFeature = () => {
     income.style.display = 'flex';
     expense.style.display = 'flex';
 
-
+   runAnimations();
 
     localStorage.setItem('username', username);
   })
