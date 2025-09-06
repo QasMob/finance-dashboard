@@ -1,5 +1,5 @@
 const finance = async () => {
-  const apiKey = 'd2pne9hr01qnf9nls15gd2pne9hr01qnf9nls160';
+  const apiKey = process.env.FINNHUB_API_KEY;
   const unList = document.querySelector('#news-list');
   const nextBtn = document.querySelector('.news-next');
   const prevBtn = document.querySelector('.news-prev');
