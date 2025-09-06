@@ -1,5 +1,4 @@
 const finance = async () => {
-  const apiKey = process.env.FINNHUB_API_KEY;
   const unList = document.querySelector('#news-list');
   const nextBtn = document.querySelector('.news-next');
   const prevBtn = document.querySelector('.news-prev');
@@ -7,7 +6,7 @@ const finance = async () => {
   const articlesPerPage = 5;
 
   try {
-    const response = await fetch(`https://finnhub.io/api/v1/news?category=general&token=${apiKey}`);
+    const response = await fetch('/.netlify/functions/getNews'); 
     const data = await response.json();
 
     // Initial render
@@ -31,7 +30,6 @@ const finance = async () => {
     function renderRow(data) {
       unList.innerHTML = '';
 
-      // Calculate start and end dynamically based on currentPage
       const start = currentPage * articlesPerPage;
       const end = start + articlesPerPage;
       const dataSliced = data.slice(start, end);
@@ -47,27 +45,12 @@ const finance = async () => {
             <img src='${news.image}' alt="${news.summary}">
           </div>
         `;
-
         unList.appendChild(li);
       });
 
-      if(currentPage === 0){
-        prevBtn.classList.add('disableBtn')
-        prevBtn.disabled = true;
-      }
-      if (currentPage > 0){
-        prevBtn.classList.remove('disableBtn');
-        prevBtn.disabled = false;
-      }
-      if((currentPage + 1) + articlesPerPage >= data.length){
-         nextBtn.classList.add('disableBtn');
-         nextBtn.disabled = true;
-      }
-      if((currentPage + 1) + articlesPerPage < data.length) {
-        nextBtn.classList.remove('disableBtn');
-        nextBtn.disabled = false;
-      }
-      
+      // Disable/enable buttons
+      prevBtn.disabled = currentPage === 0;
+      nextBtn.disabled = (currentPage + 1) * articlesPerPage >= data.length;
     }
   } catch (error) {
     console.error(error);
@@ -75,4 +58,3 @@ const finance = async () => {
 };
 
 export default finance;
-
