@@ -60,6 +60,17 @@
 
 
 
+@media(max-width: 475px){
+  .header__btn-container {
+  flex-direction: row;
+}
+
+.header {
+  flex-direction: column;
+  gap: 1rem;
+}
+}
+
 
 
 /* xs */
