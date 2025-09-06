@@ -37,7 +37,6 @@ const signInFeature = () => {
 
   const donutChart = document.querySelector('.chart');
 
-
   const income = document.querySelector('.header__incomebtn');
   const expense = document.querySelector('.header__expensebtn');
 
@@ -191,6 +190,8 @@ const signInFeature = () => {
     transactionSection.style.display = 'none';
   });
 
+ 
+
   expense.addEventListener('click', () => {
     expenseModal.style.display = 'flex';
     mainBody.style.display = 'none';
@@ -269,13 +270,6 @@ const signInFeature = () => {
   });
   
 
-  const mobileBars = document.querySelector('.mobile__nav');
-  const whiteBg = document.querySelector('.white-bg');
-
-  mobileBars.addEventListener('click', () => {
-    whiteBg.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  });
 
 
 
